@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap');
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4, h5, h6 {
+  font-size: 20px;
+}
+
+p {
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+a {
+  color: $monarch;
+
+  &:hover,
+  &:focus {
+    font-weight: 700;
+  }
+}
