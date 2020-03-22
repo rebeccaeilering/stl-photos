@@ -269,9 +269,13 @@ const neighborhoods = [
   }
 ];
 
+neighborhoods.sort((a, b) => (a.name > b.name) ? 1 : -1);
+
 const neighborhoodContainer = document.querySelector('.neighborhood-list')
 for (var i = 0; i < neighborhoods.length; i++) {
-  const item = document.createElement("li");
-  item.innerHTML = `<a href="${neighborhoods[i].url}">${neighborhoods[i].name}</a>`;
-  neighborhoodContainer.appendChild(item);
+  const listItem = document.createElement("li");
+  listItem.innerHTML = `<a href="/photos/${neighborhoods[i].url}">${neighborhoods[i].name}</a>`;
+  neighborhoodContainer.appendChild(listItem);
 }
+
+
