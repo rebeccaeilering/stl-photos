@@ -2,10 +2,12 @@
 
 h1,h2,h3,h4,h5,h6 {
   font-weight: 700;
+  margin-bottom: 20px;
 }
 
 h1 {
   font-size: 36px;
+  margin-bottom: 0;
 }
 
 h2 {
@@ -27,9 +29,10 @@ p {
 
 a {
   color: $monarch;
+  font-weight: 700;
+
 
   &:hover,
   &:focus {
-    font-weight: 700;
   }
 }
