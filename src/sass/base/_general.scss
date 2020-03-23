@@ -31,3 +31,18 @@ html, body {
   margin: 0 auto;
   padding: 0 10px;
 }
+
+
+.primary-btn {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background-color: $monarch;
+  padding: 10px 25px;
+  margin-top: 10px;
+  letter-spacing: 1px;
+
+  &:hover {
+    transform: skew(-10deg);
+  }
+}
