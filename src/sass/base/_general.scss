@@ -20,7 +20,7 @@ time, mark, audio, video {
 }
 
 html, body {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: $open-sans;
   font-weight: 400;
   font-size: 18px;
   position: relative;
@@ -36,7 +36,6 @@ html, body {
 .primary-btn {
   display: inline-block;
   color: #fff;
-  text-decoration: none;
   background-color: $monarch;
   padding: 10px 25px;
   margin-top: 10px;
@@ -44,5 +43,6 @@ html, body {
 
   &:hover {
     transform: skew(-10deg);
+    text-decoration: none;
   }
 }
