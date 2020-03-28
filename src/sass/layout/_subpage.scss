@@ -1,0 +1,40 @@
+main.content {
+  position: relative;
+  min-height: 500px;
+  padding: 100px 0;
+  background-color: #ebebeb;
+  z-index: 1;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 60vh;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+    background-image: linear-gradient(to bottom, #111, #ebebeb);
+    z-index: -1;
+  }
+
+
+  h2 {
+    position: relative;
+    color: #fff;
+    background-color: $monarch;
+    margin-bottom: 0;
+    display: inline-block;
+    padding: 10px 30px 10px 25px; 
+    clip-path: polygon(0 0, 96% 0, 100% 100%, 0 100%); 
+  }
+
+  .content-pane {
+    background-color: rgba($color: #ebebeb, $alpha: .8);
+    padding: 40px;
+    min-height: 400px;
+    clip-path: polygon(0 0, 100% 0, 99% 100%, 0 100%);
+    border-top: 5px solid $monarch;
+    z-index: 900;
+  }
+}

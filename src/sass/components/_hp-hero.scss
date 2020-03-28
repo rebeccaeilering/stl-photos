@@ -1,8 +1,21 @@
 .hero {
+  position: relative;
   background-color: #111;
-  height: 100%;
   color: #fff;
-  height: 90vh;
+  height: 80vh;
+
+  &:after {
+    position:absolute;
+    content: " ";
+    display:block;
+    left:-5%;
+    bottom:-30px;
+    transform:rotate(2deg);
+    width:110%;
+    height: 100px;
+    background: #111;
+  }
+
 
   .content {
     max-width: 500px;
