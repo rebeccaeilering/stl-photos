@@ -33,7 +33,6 @@ main.content {
     background-color: rgba($color: #ebebeb, $alpha: .8);
     padding: 40px;
     min-height: 400px;
-    clip-path: polygon(0 0, 100% 0, 99% 100%, 0 100%);
     border-top: 5px solid $monarch;
     z-index: 900;
   }
