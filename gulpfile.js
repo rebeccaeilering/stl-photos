@@ -50,11 +50,11 @@ gulp.task('imageMin', () =>
 
 // Compress JavaScript
 
-gulp.task('minify', function() {
-	gulp.src('src/js/*.js')
-	.pipe(uglify())
-	.pipe(gulp.dest('dist/js'))
-});
+// gulp.task('minify', function() {
+// 	gulp.src('src/js/*.js')
+// 	.pipe(uglify())
+// 	.pipe(gulp.dest('dist/js'))
+// });
 
 // Compile Sass
 gulp.task('sass', function() {
