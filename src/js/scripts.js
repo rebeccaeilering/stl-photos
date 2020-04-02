@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       "name": "Clifton Heights",
-      "url": "clifton-heights"
+      "url": "clifton-heights.html"
     },
     {
       "name": "Fox Park",
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       "name": "St. Louis Hills",
-      "url": "St-louis-hills.html"
+      "url": "st-louis-hills.html"
     },
     {
       "name": "Holly Hills",
