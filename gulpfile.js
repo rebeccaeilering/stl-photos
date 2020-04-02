@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
-let uglify = require('gulp-uglify-es').default;
+// let uglify = require('gulp-uglify-es').default;
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var autoprefixer = require('gulp-autoprefixer');

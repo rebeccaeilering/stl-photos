@@ -1,4 +1,3 @@
-"use strict";
 document.addEventListener("DOMContentLoaded", function () {
 
   const neighborhoods = [
@@ -275,17 +274,13 @@ document.addEventListener("DOMContentLoaded", function () {
   neighborhoods.sort((a, b) => (a.name > b.name) ? 1 : -1);
 
   const neighborhoodContainer = document.querySelector('.neighborhood-list');
-
-  for (var i = 0; i < neighborhoods.length; i++) {
-    const listItem = document.createElement("li");
-    listItem.innerHTML = `<a href="/photos/${neighborhoods[i].url}">${neighborhoods[i].name}</a>`;
-    neighborhoodContainer.appendChild(listItem);
-  };
-
-  document.querySelector('.primary-btn').addEventListener('click', function () {
-    console.log('click');
-  });
-
+  if(neighborhoodContainer){
+    for (var i = 0; i < neighborhoods.length; i++) {
+      const listItem = document.createElement("li");
+      listItem.innerHTML = `<a href="/photos/${neighborhoods[i].url}">${neighborhoods[i].name}</a>`;
+      neighborhoodContainer.appendChild(listItem);
+    };
+  }
 
   const imageThumbs = document.querySelectorAll("img");
   const fullImg = document.getElementById('full-img');
@@ -301,9 +296,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  close.addEventListener('click', function () {
-    fullImgContainer.classList.remove('show');
-    body.classList.remove('overlay');
-  });
-
+  if(close){
+    close.addEventListener('click', function () {
+      fullImgContainer.classList.remove('show');
+      body.classList.remove('overlay');
+    });
+  }
 });
