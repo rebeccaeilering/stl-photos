@@ -281,25 +281,44 @@ document.addEventListener("DOMContentLoaded", function () {
       neighborhoodContainer.appendChild(listItem);
     };
   }
+  const photoList = document.querySelector('.photo-grid');
 
-  const imageThumbs = document.querySelectorAll("img");
-  const fullImg = document.getElementById('full-img');
-  const fullImgContainer = document.querySelector('.lightbox-container');
-  const body = document.querySelector('body');
-  const close = document.getElementById('close');
+  if(photoList) {
+    async function getData() {
+      const response = await fetch('../js/buildings.json');
+      const data = await response.json();
 
-  imageThumbs.forEach((thumb) => {
-    thumb.addEventListener('click', function () {
-      fullImg.src = thumb.src;
-      fullImgContainer.classList.add('show');
-      body.classList.add('overlay');
-    });
-  });
+      for (item of data) {
+        var onstlPhotos = data.filter( item => item.neighborhood =="Old North");
+      }
 
-  if(close){
-    close.addEventListener('click', function () {
-      fullImgContainer.classList.remove('show');
-      body.classList.remove('overlay');
-    });
+      for (var i = 0; i < onstlPhotos.length; i++) {
+        const item = document.createElement('div');
+        item.classList.add('photo');
+        item.innerHTML = `<img src="../images/old-north/${onstlPhotos[i].fileName}" alt="">`;
+        photoList.appendChild(item);
+      }
+
+      const imageThumbs = document.querySelectorAll("img");
+      const fullImg = document.getElementById('full-img');
+      const fullImgContainer = document.querySelector('.lightbox-container');
+      const body = document.querySelector('body');
+      const close = document.getElementById('close');
+      imageThumbs.forEach((thumb) => {
+        thumb.addEventListener('click', function () {
+          fullImg.src = thumb.src;
+          fullImgContainer.classList.add('show');
+          body.classList.add('overlay');
+        });
+      });
+
+      if(close){
+        close.addEventListener('click', function () {
+          fullImgContainer.classList.remove('show');
+          body.classList.remove('overlay');
+        });
+      }
+    }
+    getData();
   }
 });

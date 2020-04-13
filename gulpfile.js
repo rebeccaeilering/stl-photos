@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
-// let uglify = require('gulp-uglify-es').default;
+let uglify = require('gulp-uglify-es').default;
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var autoprefixer = require('gulp-autoprefixer');
@@ -43,7 +43,7 @@ gulp.task('copyhtml', function() {
 // Optimize images
 
 gulp.task('imageMin', () =>
-    gulp.src('src/images/*')
+    gulp.src('src/images/**/*')
     .pipe(imagemin())
         .pipe(gulp.dest('dist/images'))   
 );
@@ -82,7 +82,7 @@ gulp.task('default', ['message', 'copyhtml', 'imageMin', 'sass', 'scripts', 'bro
 
 gulp.task('watch', ['browser-sync'], function() {
 	gulp.watch('src/js/**/*.js', ['scripts']);
-	gulp.watch('src/images/*', ['imageMin']);
+	gulp.watch('src/images/**/*', ['imageMin']);
 	gulp.watch('src/sass/**/*.scss', ['sass']);
 	gulp.watch('src/**/*.html', ['copyhtml']);
 });
