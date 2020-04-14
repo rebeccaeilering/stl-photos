@@ -290,13 +290,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
       for (item of data) {
         var onstlPhotos = data.filter( item => item.neighborhood =="Old North");
+        var nnrPhotos = data.filter( item => item.neighborhood =="Near North Riverfront");
       }
 
-      for (var i = 0; i < onstlPhotos.length; i++) {
-        const item = document.createElement('div');
-        item.classList.add('photo');
-        item.innerHTML = `<img src="../images/old-north/${onstlPhotos[i].fileName}" alt="">`;
-        photoList.appendChild(item);
+      if (window.location.pathname === '/photos/old-north-st-louis.html') {
+        for (var i = 0; i < onstlPhotos.length; i++) {
+          const item = document.createElement('div');
+          item.classList.add('photo');
+          item.innerHTML = `<img src="../images/old-north/${onstlPhotos[i].fileName}" alt="">`;
+          photoList.appendChild(item);
+        }
+      } else if (window.location.pathname === '/photos/near-north-riverfront.html') {
+        for (var i = 0; i < nnrPhotos.length; i++) {
+          const item = document.createElement('div');
+          item.classList.add('photo');
+          item.innerHTML = `<img src="../images/near-north-riverfront/${nnrPhotos[i].fileName}" alt="">`;
+          photoList.appendChild(item);
+        }
       }
 
       const imageThumbs = document.querySelectorAll("img");

@@ -23,10 +23,13 @@
 .lightbox-container {
   display: none;
   width: 100%;
-  max-width: 600px;
 
   &.show {
     display: block;
+  }
+
+  img {
+    max-width: 800px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -36,7 +39,10 @@
 }
 
 #close {
-  float: right;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 400;
 }
 
 .overlay:before {
