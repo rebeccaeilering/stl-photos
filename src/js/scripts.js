@@ -288,12 +288,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const response = await fetch('../js/buildings.json');
       const data = await response.json();
 
-      for (item of data) {
-        var onstlPhotos = data.filter( item => item.neighborhood =="Old North");
-        var nnrPhotos = data.filter( item => item.neighborhood =="Near North Riverfront");
-      }
-
       if (window.location.pathname === '/photos/old-north-st-louis.html') {
+        for (item of data) {
+          var onstlPhotos = data.filter( item => item.neighborhood =="Old North");
+        }
         for (var i = 0; i < onstlPhotos.length; i++) {
           const item = document.createElement('div');
           item.classList.add('photo');
@@ -301,10 +299,33 @@ document.addEventListener("DOMContentLoaded", function () {
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/near-north-riverfront.html') {
+        for (item of data) {
+          var nnrPhotos = data.filter( item => item.neighborhood =="Near North Riverfront");
+        }
         for (var i = 0; i < nnrPhotos.length; i++) {
           const item = document.createElement('div');
           item.classList.add('photo');
           item.innerHTML = `<img src="../images/near-north-riverfront/${nnrPhotos[i].fileName}" alt="">`;
+          photoList.appendChild(item);
+        }
+      } else if (window.location.pathname === '/photos/downtown-west.html') {
+        for (item of data) {
+          var downwestPhotos = data.filter( item => item.neighborhood =="Downtown West");
+        }
+        for (var i = 0; i < downwestPhotos.length; i++) {
+          const item = document.createElement('div');
+          item.classList.add('photo');
+          item.innerHTML = `<img src="../images/downtown-west/${downwestPhotos[i].fileName}" alt="">`;
+          photoList.appendChild(item);
+        }
+      } else if (window.location.pathname === '/photos/downtown.html') {
+        for (item of data) {
+          var downPhotos = data.filter( item => item.neighborhood =="Downtown");
+        }
+        for (var i = 0; i < downPhotos.length; i++) {
+          const item = document.createElement('div');
+          item.classList.add('photo');
+          item.innerHTML = `<img src="../images/downtown/${downPhotos[i].fileName}" alt="">`;
           photoList.appendChild(item);
         }
       }
