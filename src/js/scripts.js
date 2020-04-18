@@ -328,6 +328,17 @@ document.addEventListener("DOMContentLoaded", function () {
           item.innerHTML = `<img src="../images/downtown/${downPhotos[i].fileName}" alt="">`;
           photoList.appendChild(item);
         }
+      } else if (window.location.pathname === '/photos/benton-park.html') {
+        console.log('here');
+        for (item of data) {
+          var bentonPhotos = data.filter( item => item.neighborhood =="Benton Park");
+        }
+        for (var i = 0; i < bentonPhotos.length; i++) {
+          const item = document.createElement('div');
+          item.classList.add('photo');
+          item.innerHTML = `<img src="../images/benton-park/${bentonPhotos[i].fileName}" alt="">`;
+          photoList.appendChild(item);
+        }
       }
 
       const imageThumbs = document.querySelectorAll("img");
