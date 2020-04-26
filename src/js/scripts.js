@@ -339,6 +339,17 @@ document.addEventListener("DOMContentLoaded", function () {
           item.innerHTML = `<img src="../images/benton-park/${bentonPhotos[i].fileName}" alt="">`;
           photoList.appendChild(item);
         }
+      } else if (window.location.pathname === '/photos/soulard.html') {
+        console.log('here');
+        for (item of data) {
+          var soulardPhotos = data.filter( item => item.neighborhood =="Soulard");
+        }
+        for (var i = 0; i < soulardPhotos.length; i++) {
+          const item = document.createElement('div');
+          item.classList.add('photo');
+          item.innerHTML = `<img src="../images/soulard/${soulardPhotos[i].fileName}" alt="">`;
+          photoList.appendChild(item);
+        }
       }
 
       const imageThumbs = document.querySelectorAll("img");
