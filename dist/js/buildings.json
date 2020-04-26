@@ -553,5 +553,80 @@
     "id":"sou025",
     "fileName":"sou-025.jpg",
     "neighborhood":"Soulard"
+  },
+  {
+    "id":"bentonwest001",
+    "fileName":"bentonwest-001.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest002",
+    "fileName":"bentonwest-002.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest003",
+    "fileName":"bentonwest-003.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest004",
+    "fileName":"bentonwest-004.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest005",
+    "fileName":"bentonwest-005.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest006",
+    "fileName":"bentonwest-006.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest007",
+    "fileName":"bentonwest-007.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest008",
+    "fileName":"bentonwest-008.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest009",
+    "fileName":"bentonwest-009.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest010",
+    "fileName":"bentonwest-010.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest011",
+    "fileName":"bentonwest-011.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest012",
+    "fileName":"bentonwest-012.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest013",
+    "fileName":"bentonwest-013.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest014",
+    "fileName":"bentonwest-014.jpg",
+    "neighborhood":"Benton Park West"
+  },
+  {
+    "id":"bentonwest015",
+    "fileName":"bentonwest-015.jpg",
+    "neighborhood":"Benton Park West"
   }
 ]

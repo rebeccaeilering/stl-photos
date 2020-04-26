@@ -350,6 +350,17 @@ document.addEventListener("DOMContentLoaded", function () {
           item.innerHTML = `<img src="../images/soulard/${soulardPhotos[i].fileName}" alt="">`;
           photoList.appendChild(item);
         }
+      } else if (window.location.pathname === '/photos/benton-park-west.html') {
+        console.log('here');
+        for (item of data) {
+          var bentonwestPhotos = data.filter( item => item.neighborhood =="Benton Park West");
+        }
+        for (var i = 0; i < bentonwestPhotos.length; i++) {
+          const item = document.createElement('div');
+          item.classList.add('photo');
+          item.innerHTML = `<img src="../images/benton-park-west/${bentonwestPhotos[i].fileName}" alt="">`;
+          photoList.appendChild(item);
+        }
       }
 
       const imageThumbs = document.querySelectorAll("img");
