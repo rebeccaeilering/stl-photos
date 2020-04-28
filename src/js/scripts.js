@@ -295,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0; i < onstlPhotos.length; i++) {
           const item = document.createElement('div');
           item.classList.add('photo');
-          item.innerHTML = `<img src="../images/old-north/${onstlPhotos[i].fileName}" alt="">`;
+          item.innerHTML = `<img class="lazy" data-src="../images/old-north/${onstlPhotos[i].fileName}" alt="">`;
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/near-north-riverfront.html') {
@@ -362,6 +362,41 @@ document.addEventListener("DOMContentLoaded", function () {
           photoList.appendChild(item);
         }
       }
+
+      const imgs = document.querySelectorAll('img');
+      for(var i = 0; i < 20; i++) {
+        var currentSrc = imgs[i].getAttribute('data-src');
+        console.log(currentSrc)
+        imgs[i].setAttribute('src', currentSrc);
+      }
+
+      var lazyloadImages = document.querySelectorAll("img.lazy");    
+      var lazyloadThrottleTimeout;
+      
+      function lazyload () {
+        if(lazyloadThrottleTimeout) {
+          clearTimeout(lazyloadThrottleTimeout);
+        }    
+        
+        lazyloadThrottleTimeout = setTimeout(function() {
+            var scrollTop = window.pageYOffset;
+            lazyloadImages.forEach(function(img) {
+                if(img.offsetTop < (window.innerHeight + scrollTop)) {
+                  img.src = img.dataset.src;
+                  img.classList.remove('lazy');
+                }
+            });
+            if(lazyloadImages.length == 0) { 
+              document.removeEventListener("scroll", lazyload);
+              window.removeEventListener("resize", lazyload);
+              window.removeEventListener("orientationChange", lazyload);
+            }
+        }, 20);
+      }
+      
+      document.addEventListener("scroll", lazyload);
+      window.addEventListener("resize", lazyload);
+      window.addEventListener("orientationChange", lazyload);
 
       const imageThumbs = document.querySelectorAll("img");
       const fullImg = document.getElementById('full-img');
