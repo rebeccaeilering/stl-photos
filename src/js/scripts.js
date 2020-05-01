@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
   const neighborhoods = [
     {
       "name": "Central West End",
@@ -293,9 +292,13 @@ document.addEventListener("DOMContentLoaded", function () {
           var onstlPhotos = data.filter( item => item.neighborhood =="Old North");
         }
         for (var i = 0; i < onstlPhotos.length; i++) {
-          const item = document.createElement('div');
-          item.classList.add('photo');
-          item.innerHTML = `<img class="lazy" data-src="../images/old-north/${onstlPhotos[i].fileName}" alt="">`;
+          const item = document.createElement('a');
+          item.setAttribute('href',`../images/old-north/thumbs/${onstlPhotos[i].thumb}`);
+          if (i > 14) {
+            item.innerHTML = `<img class="lazy" data-src="../images/old-north/${onstlPhotos[i].fileName}" alt="">`;
+          } else {
+            item.innerHTML = `<img src="../images/old-north/${onstlPhotos[i].fileName}" alt="">`;
+          }
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/near-north-riverfront.html') {
@@ -305,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0; i < nnrPhotos.length; i++) {
           const item = document.createElement('div');
           item.classList.add('photo');
-          item.innerHTML = `<img src="../images/near-north-riverfront/${nnrPhotos[i].fileName}" alt="">`;
+          item.innerHTML = `<img class="lazy" data-src="../images/near-north-riverfront/${nnrPhotos[i].fileName}" alt="">`;
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/downtown-west.html') {
@@ -315,7 +318,7 @@ document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0; i < downwestPhotos.length; i++) {
           const item = document.createElement('div');
           item.classList.add('photo');
-          item.innerHTML = `<img src="../images/downtown-west/${downwestPhotos[i].fileName}" alt="">`;
+          item.innerHTML = `<img class="lazy" data-src="../images/downtown-west/${downwestPhotos[i].fileName}" alt="">`;
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/downtown.html') {
@@ -325,49 +328,49 @@ document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0; i < downPhotos.length; i++) {
           const item = document.createElement('div');
           item.classList.add('photo');
-          item.innerHTML = `<img src="../images/downtown/${downPhotos[i].fileName}" alt="">`;
+          item.innerHTML = `<img class="lazy" data-src="../images/downtown/${downPhotos[i].fileName}" alt="">`;
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/benton-park.html') {
-        console.log('here');
         for (item of data) {
           var bentonPhotos = data.filter( item => item.neighborhood =="Benton Park");
         }
         for (var i = 0; i < bentonPhotos.length; i++) {
           const item = document.createElement('div');
           item.classList.add('photo');
-          item.innerHTML = `<img src="../images/benton-park/${bentonPhotos[i].fileName}" alt="">`;
+          item.innerHTML = `<img class="lazy" data-src="../images/benton-park/${bentonPhotos[i].fileName}" alt="">`;
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/soulard.html') {
-        console.log('here');
         for (item of data) {
           var soulardPhotos = data.filter( item => item.neighborhood =="Soulard");
         }
         for (var i = 0; i < soulardPhotos.length; i++) {
           const item = document.createElement('div');
           item.classList.add('photo');
-          item.innerHTML = `<img src="../images/soulard/${soulardPhotos[i].fileName}" alt="">`;
+          item.innerHTML = `<img class="lazy" data-src="../images/soulard/${soulardPhotos[i].fileName}" alt="">`;
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/benton-park-west.html') {
-        console.log('here');
         for (item of data) {
           var bentonwestPhotos = data.filter( item => item.neighborhood =="Benton Park West");
         }
         for (var i = 0; i < bentonwestPhotos.length; i++) {
           const item = document.createElement('div');
           item.classList.add('photo');
-          item.innerHTML = `<img src="../images/benton-park-west/${bentonwestPhotos[i].fileName}" alt="">`;
+          item.innerHTML = `<img class="lazy" data-src="../images/benton-park-west/${bentonwestPhotos[i].fileName}" alt="">`;
           photoList.appendChild(item);
         }
-      }
-
-      const imgs = document.querySelectorAll('img');
-      for(var i = 0; i < 20; i++) {
-        var currentSrc = imgs[i].getAttribute('data-src');
-        console.log(currentSrc)
-        imgs[i].setAttribute('src', currentSrc);
+      } else if (window.location.pathname === '/photos/midtown.html') {
+        for (item of data) {
+          var midtownPhotos = data.filter( item => item.neighborhood =="Midtown");
+        }
+        for (var i = 0; i < midtownPhotos.length; i++) {
+          const item = document.createElement('div');
+          item.classList.add('photo');
+          item.innerHTML = `<img class="lazy" data-src="../images/midtown/${midtownPhotos[i].fileName}" alt="">`;
+          photoList.appendChild(item);
+        }
       }
 
       var lazyloadImages = document.querySelectorAll("img.lazy");    
@@ -398,25 +401,25 @@ document.addEventListener("DOMContentLoaded", function () {
       window.addEventListener("resize", lazyload);
       window.addEventListener("orientationChange", lazyload);
 
-      const imageThumbs = document.querySelectorAll("img");
-      const fullImg = document.getElementById('full-img');
-      const fullImgContainer = document.querySelector('.lightbox-container');
-      const body = document.querySelector('body');
-      const close = document.getElementById('close');
-      imageThumbs.forEach((thumb) => {
-        thumb.addEventListener('click', function () {
-          fullImg.src = thumb.src;
-          fullImgContainer.classList.add('show');
-          body.classList.add('overlay');
-        });
-      });
+      // const imageThumbs = document.querySelectorAll("img");
+      // const fullImg = document.getElementById('full-img');
+      // const fullImgContainer = document.querySelector('.lightbox-container');
+      // const body = document.querySelector('body');
+      // const close = document.getElementById('close');
+      // imageThumbs.forEach((thumb) => {
+      //   thumb.addEventListener('click', function () {
+      //     fullImg.src = thumb.src;
+      //     fullImgContainer.classList.add('show');
+      //     body.classList.add('overlay');
+      //   });
+      // });
 
-      if(close){
-        close.addEventListener('click', function () {
-          fullImgContainer.classList.remove('show');
-          body.classList.remove('overlay');
-        });
-      }
+      // if(close){
+      //   close.addEventListener('click', function () {
+      //     fullImgContainer.classList.remove('show');
+      //     body.classList.remove('overlay');
+      //   });
+      // }
     }
     getData();
   }
