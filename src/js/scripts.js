@@ -293,11 +293,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         for (var i = 0; i < onstlPhotos.length; i++) {
           const item = document.createElement('a');
-          item.setAttribute('href',`../images/old-north/thumbs/${onstlPhotos[i].thumb}`);
+          item.setAttribute('href',`../images/old-north/${onstlPhotos[i].fileName}`);
           if (i > 14) {
-            item.innerHTML = `<img class="lazy" data-src="../images/old-north/${onstlPhotos[i].fileName}" alt="">`;
+            item.innerHTML = `<img class="lazy" data-src="../images/old-north/thumbs/${onstlPhotos[i].thumb}" alt="">`;
           } else {
-            item.innerHTML = `<img src="../images/old-north/${onstlPhotos[i].fileName}" alt="">`;
+            item.innerHTML = `<img src="../images/old-north/thumbs/${onstlPhotos[i].thumb}" alt="">`;
           }
           photoList.appendChild(item);
         }
@@ -396,30 +396,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }, 20);
       }
-      
+
       document.addEventListener("scroll", lazyload);
       window.addEventListener("resize", lazyload);
       window.addEventListener("orientationChange", lazyload);
-
-      // const imageThumbs = document.querySelectorAll("img");
-      // const fullImg = document.getElementById('full-img');
-      // const fullImgContainer = document.querySelector('.lightbox-container');
-      // const body = document.querySelector('body');
-      // const close = document.getElementById('close');
-      // imageThumbs.forEach((thumb) => {
-      //   thumb.addEventListener('click', function () {
-      //     fullImg.src = thumb.src;
-      //     fullImgContainer.classList.add('show');
-      //     body.classList.add('overlay');
-      //   });
-      // });
-
-      // if(close){
-      //   close.addEventListener('click', function () {
-      //     fullImgContainer.classList.remove('show');
-      //     body.classList.remove('overlay');
-      //   });
-      // }
     }
     getData();
   }
