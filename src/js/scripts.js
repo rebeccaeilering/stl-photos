@@ -306,9 +306,13 @@ document.addEventListener("DOMContentLoaded", function () {
           var nnrPhotos = data.filter( item => item.neighborhood =="Near North Riverfront");
         }
         for (var i = 0; i < nnrPhotos.length; i++) {
-          const item = document.createElement('div');
-          item.classList.add('photo');
-          item.innerHTML = `<img class="lazy" data-src="../images/near-north-riverfront/${nnrPhotos[i].fileName}" alt="">`;
+          const item = document.createElement('a');
+          item.setAttribute('href',`../images/near-north-riverfront/${nnrPhotos[i].fileName}`);
+          if (i > 14) {
+            item.innerHTML = `<img class="lazy" data-src="../images/near-north-riverfront/thumbs/${nnrPhotos[i].thumb}" alt="">`;
+          } else {
+            item.innerHTML = `<img src="../images/near-north-riverfront/thumbs/${nnrPhotos[i].thumb}" alt="">`;
+          }
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/downtown-west.html') {
@@ -316,9 +320,13 @@ document.addEventListener("DOMContentLoaded", function () {
           var downwestPhotos = data.filter( item => item.neighborhood =="Downtown West");
         }
         for (var i = 0; i < downwestPhotos.length; i++) {
-          const item = document.createElement('div');
-          item.classList.add('photo');
-          item.innerHTML = `<img class="lazy" data-src="../images/downtown-west/${downwestPhotos[i].fileName}" alt="">`;
+          const item = document.createElement('a');
+          item.setAttribute('href',`../images/downtown-west/${downwestPhotos[i].fileName}`);
+          if (i > 14) {
+            item.innerHTML = `<img class="lazy" data-src="../images/downtown-west/thumbs/${downwestPhotos[i].thumb}" alt="">`;
+          } else {
+            item.innerHTML = `<img src="../images/downtown-west/thumbs/${downwestPhotos[i].thumb}" alt="">`;
+          }
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/downtown.html') {
@@ -326,9 +334,13 @@ document.addEventListener("DOMContentLoaded", function () {
           var downPhotos = data.filter( item => item.neighborhood =="Downtown");
         }
         for (var i = 0; i < downPhotos.length; i++) {
-          const item = document.createElement('div');
-          item.classList.add('photo');
-          item.innerHTML = `<img class="lazy" data-src="../images/downtown/${downPhotos[i].fileName}" alt="">`;
+          const item = document.createElement('a');
+          item.setAttribute('href',`../images/downtown/${downPhotos[i].fileName}`);
+          if (i > 14) {
+            item.innerHTML = `<img class="lazy" data-src="../images/downtown/thumbs/${downPhotos[i].thumb}" alt="">`;
+          } else {
+            item.innerHTML = `<img src="../images/downtown/thumbs/${downPhotos[i].thumb}" alt="">`;
+          }
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/benton-park.html') {
@@ -336,9 +348,13 @@ document.addEventListener("DOMContentLoaded", function () {
           var bentonPhotos = data.filter( item => item.neighborhood =="Benton Park");
         }
         for (var i = 0; i < bentonPhotos.length; i++) {
-          const item = document.createElement('div');
-          item.classList.add('photo');
-          item.innerHTML = `<img class="lazy" data-src="../images/benton-park/${bentonPhotos[i].fileName}" alt="">`;
+          const item = document.createElement('a');
+          item.setAttribute('href',`../images/benton-park/${bentonPhotos[i].fileName}`);
+          if (i > 14) {
+            item.innerHTML = `<img class="lazy" data-src="../images/benton-park/thumbs/${bentonPhotos[i].thumb}" alt="">`;
+          } else {
+            item.innerHTML = `<img src="../images/benton-park/thumbs/${bentonPhotos[i].thumb}" alt="">`;
+          }
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/soulard.html') {
@@ -346,9 +362,13 @@ document.addEventListener("DOMContentLoaded", function () {
           var soulardPhotos = data.filter( item => item.neighborhood =="Soulard");
         }
         for (var i = 0; i < soulardPhotos.length; i++) {
-          const item = document.createElement('div');
-          item.classList.add('photo');
-          item.innerHTML = `<img class="lazy" data-src="../images/soulard/${soulardPhotos[i].fileName}" alt="">`;
+          const item = document.createElement('a');
+          item.setAttribute('href',`../images/soulard/${soulardPhotos[i].fileName}`);
+          if (i > 14) {
+            item.innerHTML = `<img class="lazy" data-src="../images/soulard/thumbs/${soulardPhotos[i].thumb}" alt="">`;
+          } else {
+            item.innerHTML = `<img src="../images/soulard/thumbs/${soulardPhotos[i].thumb}" alt="">`;
+          }
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/benton-park-west.html') {
@@ -356,9 +376,13 @@ document.addEventListener("DOMContentLoaded", function () {
           var bentonwestPhotos = data.filter( item => item.neighborhood =="Benton Park West");
         }
         for (var i = 0; i < bentonwestPhotos.length; i++) {
-          const item = document.createElement('div');
-          item.classList.add('photo');
-          item.innerHTML = `<img class="lazy" data-src="../images/benton-park-west/${bentonwestPhotos[i].fileName}" alt="">`;
+          const item = document.createElement('a');
+          item.setAttribute('href',`../images/benton-park-west/${bentonwestPhotos[i].fileName}`);
+          if (i > 14) {
+            item.innerHTML = `<img class="lazy" data-src="../images/benton-park-west/thumbs${bentonwestPhotos[i].thumb}" alt="">`;
+          } else {
+            item.innerHTML = `<img src="../images/benton-park-west/thumbs/${bentonwestPhotos[i].thumb}" alt="">`;
+          }
           photoList.appendChild(item);
         }
       } else if (window.location.pathname === '/photos/midtown.html') {
@@ -366,9 +390,13 @@ document.addEventListener("DOMContentLoaded", function () {
           var midtownPhotos = data.filter( item => item.neighborhood =="Midtown");
         }
         for (var i = 0; i < midtownPhotos.length; i++) {
-          const item = document.createElement('div');
-          item.classList.add('photo');
-          item.innerHTML = `<img class="lazy" data-src="../images/midtown/${midtownPhotos[i].fileName}" alt="">`;
+          const item = document.createElement('a');
+          item.setAttribute('href',`../images/midtown/${midtownPhotos[i].fileName}`);
+          if (i > 14) {
+            item.innerHTML = `<img class="lazy" data-src="../images/midtown/thumbs/${midtownPhotos[i].thumb}" alt="">`;
+          } else {
+            item.innerHTML = `<img src="../images/midtown/thumbs/${midtownPhotos[i].thumb}" alt="">`;
+          }
           photoList.appendChild(item);
         }
       }
